@@ -10,8 +10,6 @@
         td{
             border:#eee solid;
         }
-        
-
     </style>
     <div id="contenedor-tablero"></div>
    <script>
@@ -26,7 +24,7 @@
             for (let y =0; y < filas; y++){
                 html += "<tr>"
                     for(let x= 0; x < columnas; x++){
-                        html +='<td id="celula-${x + "-" + y}" onmouseup="cambiarEstado(${x}, ${y})">'
+                        html +='<td id="celula-'+x+'-'+y+'" onmouseup="cambiarEstado('+x+', '+y+')">'
                         html +="</td>"
                     }
                 html += "</tr>"
@@ -40,26 +38,20 @@
             
        }
        function cambiarEstado(x, y){
-           let celula = document.getElementById('celula-${x + "-" + y}')
-           if (celula.style.blackground !="black"){
-            celula.style.blackground ="black"
+           console.log(x)
+           console.log(y)
+
+           let celula = document.getElementById('celula-'+x+'-'+y+'}')
+           if (celula.style.backgroundColor !="black"){
+            celula.style.backgroundColor ="black"
            }else{
-            celula.style.blackground =""
+            celula.style.backgroundColor =""
            }
 
        }
-       function fotografia(){
-        fotografia=[]
-        for (let x = 0; x < columnas.length; x++) {
-            fotografia.push([])
-            for(let x = 0; y<columnas; y++){
-                let celula = document.getElementById('celula-${x + "-" + y}')
-                fotografia[x][y] = celula.style.background==    "black"
-            }
-            
-        }
-       }
-   </script>
+       
+       
+</script>
 
 </body>
 </html>

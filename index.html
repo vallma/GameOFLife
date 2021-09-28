@@ -3,11 +3,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game of life</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>JOC DE LA VIDA</title>
 </head>
 <body>
 
-    <!-- CSS (Estilos) -->
+   
     <style>
         * {
             transition: all 0s;
@@ -26,20 +27,36 @@
         }
 
         .contenedor-botones {
-            position: fixed;
-            bottom: 10px;
+             display: -webkit-flex;
+              display: flex;
+             -webkit-flex-direction: row;
+         -ms-flex-direction: row;
+             flex-direction: row;
+         -webkit-flex-wrap: wrap;
+         -ms-flex-wrap: wrap;
+         flex-wrap: wrap;
+         -webkit-justify-content: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+         -webkit-align-content: stretch;
+          -ms-flex-line-pack: stretch;
+          align-content: stretch;
+          -webkit-align-items: flex-end;
+          -ms-flex-align: end;
+     align-items: flex-end;
            
         }
 
         .btn {
             cursor: pointer;
-            background: rgb(126, 15, 15);
+            background: rgba(189, 179, 88, 0.897);
             display: inline block;
             width: 20px;
             height: 20px;
             display: inline-flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-end;
+            
         }
 
         .btn:hover {
@@ -48,7 +65,7 @@
         }
     </style>
 
-    <!-- HTML (Estructura) -->
+    <!-- HTML BOTONS -->
 
     <div id="contenedor-tablero">
     </div>
@@ -66,46 +83,34 @@
         <br>
         <br>
 
-        <div class="btn" id="btn4" onclick="randomizar()" title="Aleatorio">
-            <i class="fas fa-random"></i>
+        
         </div>
 
         <div class="btn" id="btn3" onclick="limpiar()" title="Limpiar">
             <i class="fas fa-eraser"></i>
         </div>
 
-        <br>
-        <br>
-
-        <div class="btn" id="btn5" onclick="minus()" title="Alejarse">
-            <i class="fas fa-minus"></i>
-        </div>
-
-        <div class="btn" id="btn6" onclick="plus()" title="Acercarse">
-            <i class="fas fa-plus"></i>
-        </div>
-
         <br><br>
 
         <div class="btn" id="btn7" onclick="centrar()" title="centrar">
-<!--            -->
             <svg aria-hidden="true" focusable="false" data-prefix="fal" data-icon="location" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="svg-inline--fa fa-location fa-w-16 fa-2x"><path fill="currentColor" d="M504 240h-56.81C439.48 146.76 365.24 72.52 272 64.81V8c0-4.42-3.58-8-8-8h-16c-4.42 0-8 3.58-8 8v56.81C146.76 72.52 72.52 146.76 64.81 240H8c-4.42 0-8 3.58-8 8v16c0 4.42 3.58 8 8 8h56.81c7.71 93.24 81.95 167.48 175.19 175.19V504c0 4.42 3.58 8 8 8h16c4.42 0 8-3.58 8-8v-56.81c93.24-7.71 167.48-81.95 175.19-175.19H504c4.42 0 8-3.58 8-8v-16c0-4.42-3.58-8-8-8zM256 416c-88.22 0-160-71.78-160-160S167.78 96 256 96s160 71.78 160 160-71.78 160-160 160zm0-256c-53.02 0-96 42.98-96 96s42.98 96 96 96 96-42.98 96-96-42.98-96-96-96zm0 160c-35.29 0-64-28.71-64-64s28.71-64 64-64 64 28.71 64 64-28.71 64-64 64z" class=""></path></svg>
         </div>
 
     </div>
 
-    <!-- JS (Lógica) -->
+    
     <script>
-        let filas = 15
-        let columnas = 15
+        let filas = 50
+        let columnas = 50
         let lado = 15
 
         let reproducir = false
 
         let fotografia = []
-
-        document.addEventListener("keydown", (e) => { //Para tener un control con el teclado
-            e.preventDefault() //Para evitar el movimiento del scroll
+     //control del teclat i esdevaniments
+        document.addEventListener("keydown", (e) => { //Esdavanimet per controlar el teclat
+    
+            e.preventDefault() //Evita el moviment de scroll
             switch (e.keyCode) {
                 case 39:
                     siguienteEstado()
@@ -120,7 +125,7 @@
                     break;
             }
         })
-
+     //mentres es reprodueix cambia de estat
         setInterval(() => {
             if (reproducir) {
                 siguienteEstado()
@@ -132,35 +137,6 @@
                 (lado * columnas - window.innerWidth) / 2,
                 (lado * filas - window.innerHeight) / 2
             )
-        }
-
-        function minus() {
-            lado--
-            if (lado <= 7) {
-                lado = 7
-                return
-            }
-            let tablero = document.getElementById("tablero")
-            tablero.style.width = lado * columnas + "px"
-            tablero.style.height = lado * filas + "px"
-        }
-
-        function plus() {
-            lado++
-            let tablero = document.getElementById("tablero")
-            tablero.style.width = lado * columnas + "px"
-            tablero.style.height = lado * filas + "px"
-        }
-
-        function randomizar() {
-            mapa_complejidad = []
-            for (let x = 0; x < columnas; x++) {
-                for (let y = 0; y < filas; y++) {
-                    if (Math.random() < 0.2) {
-                        cambiarEstado(x, y)
-                    }
-                }
-            }
         }
 
         function intercambiarReproducción() {
@@ -176,7 +152,7 @@
         }
 
         generarTablero()
-
+            //Genera el tablero de forma dinamica
         function generarTablero() {
             let html = "<table cellpadding=0 cellspacing=0 id='tablero'>"
             for (let y = 0; y < filas; y++) {
@@ -309,11 +285,11 @@
 
                         let vivas = contarVivas(Number(x), Number(y))
                         let celula = document.getElementById(`celula-${x + "-" + y}`)
-                        if (fotografia[x][y]) { //celula está viva
+                        if (fotografia[x][y]) { //celula esta viva
                             if (vivas < 2 || vivas > 3) {
-                                celula.style.background = "" // Muere por sobrepoblación o soledad
+                                celula.style.background = "" // Mor per sobre població
                             }
-                        } else { //celula está muerta
+                        } else { //celula esta morta 
                             if (vivas == 3)
                                 celula.style.background = "black"
                         }
@@ -325,4 +301,5 @@
 
 
 
-</body></html>
+</body>
+</html>

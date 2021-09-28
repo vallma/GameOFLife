@@ -3,10 +3,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css"
+      rel="stylesheet" type="text/css">
     <title>JOC DE LA VIDA</title>
 </head>
 <body>
-    <form action="" method="get"></form>
+    <div id="cabezera">
+
+        <h1>JOC DE LA VIDA</h1>
+    </div>
+    <div id="background">
+    <div id="ContainerFormulari">
+        
+    <form type="text" method="get">
+        <h2>INSEREIX EL TEU NICK</h2>
+        <p>
+            <input type="text" name="username" id="username" placeholder="Username">
+        </p>
+    <p><input type="range" min="30" max="170" step="1" value="90"><label>90</label></p>
+<p><input type="range" min="-50" max="50" step="1" value="10"><label>10</label></p>
+        <input id="Login" type="button" value="Login">
+</form>
+    <script>
+       for( input of document.querySelectorAll("input[type=range]")){
+   actualizarInput(input) 
+}
+
+document.addEventListener("input", function(evt) {
+   var input = evt.target;
+   actualizarInput(input)
+});
+
+function actualizarInput(input){
+   var label = input.parentElement.querySelector("label");
+   label.innerHTML = input.value;
+   var inputMin = input.getAttribute("min");
+   var inputMax = input.getAttribute("max");
+   var unidad = (inputMax - inputMin) / 100;
+   input.style.setProperty("--value", (input.value - inputMin)/unidad);  
+}
+    </script>
+    </div>
+</div>
+    
     
 </body>
 </html>

@@ -1,0 +1,125 @@
+HTML CSS JSResult Skip Results Iframe
+EDIT ON
+
+body{ background-color:#333; color:#777; 
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;}
+#cabezera{
+
+
+        padding-top: 2pt;
+        background-color: #29434e;
+        height: 75px;
+        text-align: center;
+        align-items: center;
+        align-content: center;
+        justify-content: center;
+    }
+label{display:inline-block; width:3em;}
+input[type=range]{
+  width:20em;
+  display:inline-block;
+}
+p{margin:2em 0; text-align:center;}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: #29434e;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #29434e;
+  border-radius: 50%;
+  margin-top: -9px;
+}
+
+input[type=range]::-moz-range-thumb {
+  background-color: #29434e;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #29434e;
+  border-radius: 50%;
+}
+
+input[type=range]::-ms-thumb {
+  background-color: #29434e;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #29434e;
+  border-radius: 50%;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 6px;
+  background:linear-gradient(to right, #546e7a calc(var(--value)*1%), black 0);
+}
+input[type=range]::-moz-range-track {
+  height: 6px;
+  background:linear-gradient(to right, #546e7a calc(var(--value)*1%), black 0);
+}
+
+input[type=range]::-ms-track {
+  background-color: #29434e;
+  height: 3px;
+} 
+
+input[type=range]::-ms-fill-lower {
+  background-color: HotPink
+}
+
+input[type=range]::-ms-fill-upper {
+  background-color: black;
+} 
+input[type=text]::placeholder{
+    border-radius: 12pt;
+    text-align: center;
+
+}
+
+#Containerformulari{
+    height: 400;
+    width: 400;
+    background-color: #819ca9;
+    display: flex;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16), 0 0 0 2px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    }
+
+   
+  
+
+#Background{
+    background-color: #546e7a;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    height:100%;
+}
+h2{
+    
+    text-align: center;
+    align-content: flex-start;
+    justify-content: center;
+    
+    color:#29434e;
+    
+
+}
+

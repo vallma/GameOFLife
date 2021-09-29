@@ -5,24 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css"
       rel="stylesheet" type="text/css">
+    <link href="index.html">
     <title>JOC DE LA VIDA</title>
 </head>
 <body>
     <div id="cabezera">
 
-        <h1>JOC DE LA VIDA</h1>
+        
+        <nav class="menu">
+            <h1>JOC DE LA VIDA</h1>
+            <ul>
+              <li><a href="./index.html">GAME</a></li>
+              <li><a href="#">Estadístiques</a></li>
+              
+            </ul>
+          </nav>
     </div>
     <div id="background">
     <div id="ContainerFormulari">
         
-    <form type="text" method="get">
+    <form type="text" method="POST" action="./index.html">
         <h2>INSEREIX EL TEU NICK</h2>
         <p>
-            <input type="text" name="username" id="username" placeholder="Username">
+            <input id="inputtext" type="text" name="username" id="username" placeholder="Username">
         </p>
-    <p><input type="range" min="30" max="170" step="1" value="90"><label>90</label></p>
-<p><input type="range" min="-50" max="50" step="1" value="10"><label>10</label></p>
-        <input id="Login" type="button" value="Login">
+    <p><input type="range" min="30" max="170" step="1" value="90" id="filas"><label>90</label></p>
+    <p>  <input type="range" min="-50" max="50" step="1" value="10" id="columnas"><label>10</label></p>
+        <button value="Login" onclick="saveButtonHandler()" >Login</button>
+        
 </form>
     <script>
        for( input of document.querySelectorAll("input[type=range]")){
@@ -42,8 +52,27 @@ function actualizarInput(input){
    var unidad = (inputMax - inputMin) / 100;
    input.style.setProperty("--value", (input.value - inputMin)/unidad);  
 }
+
+
+
+var saveButton = document.getElementById("Login");
+    saveButton.onclick = saveButtonHandler;
+
+function saveButtonHandler() {
+    var finput = document.getElementById("filas");
+    var Lfilas = finput.value;
+    var cinput = document.getElementById("columnes");
+    var Lcolumnes = cinput.value;
+   
+}
+
+
     </script>
+    <div id="preview">
+
     </div>
+    </div>
+    
 </div>
     
     

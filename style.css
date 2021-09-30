@@ -106,28 +106,25 @@ html {
   scroll-behavior: smooth;
 }
 
-#bodytablero {
-
-
-  background-color: #546e7a;
+#container {
+  background-color: #819ca9;
   display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-content: center;
-  -ms-flex-line-pack: center;
-  align-content: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+   
+  
   }
 
 
@@ -136,19 +133,7 @@ td {
   border: rgba(0, 0, 0, 0.2) solid 2px;
 }
 
-.contenedor-botones {
-  display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    justify-content: center;
-    }
-
- 
-
-
 .btn {
-
-  
   cursor: pointer;
   background-color: #819ca9;
   width: 40px;
@@ -156,12 +141,7 @@ td {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-
-  
-  
+  justify-content: center;
 }
 
 .btn:hover {
@@ -169,29 +149,32 @@ td {
   color: white;
 }
 
-#contenedor-tablero{
-  display: flex;
-  background-color: #546e7a;
-  align-content: center;
-  flex-direction: column;
+#contenedor-tablero:nth-child(1) {
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  
+
+  margin: 5% auto; 
+  
+  }
+
+  
+  
+  
+  
+
+
+
+.contenedor-botones:nth-child(2) {
   display: flex;
   -webkit-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-content: stretch;
-  -ms-flex-line-pack: stretch;
-  align-content: stretch;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: fixed;
-  
-
-
-}
+  }

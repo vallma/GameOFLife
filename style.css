@@ -1,6 +1,6 @@
 HTML CSS JSResult Skip Results Iframe
 EDIT ON
-
+/* Formulari*/
 body{ background-color:#333; color:#777; 
     flex-direction: column;
     flex-wrap: nowrap;
@@ -13,74 +13,13 @@ body{ background-color:#333; color:#777;
         padding-top: 2pt;
         background-color: #29434e;
         height: 75px;
-        
+        flex-direction: row;
        
        
         
     }
 label{display:inline-block; width:3em;}
-input[type=range]{
-  width:20em;
-  display:inline-block;
-}
-p{margin:2em 0; text-align:center;color:#fff;}
 
-input[type='range']:focus {
-  outline: none;
-}
-
-input[type='range'],
-input[type='range']::-webkit-slider-runnable-track,
-input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
-}
-
-input[type=range]::-webkit-slider-thumb {
-  background-color: #29434e;
-  width: 20px;
-  height: 20px;
-  border: 3px solid #29434e;
-  border-radius: 50%;
-  margin-top: -9px;
-}
-
-input[type=range]::-moz-range-thumb {
-  background-color: #29434e;
-  width: 15px;
-  height: 15px;
-  border: 3px solid #29434e;
-  border-radius: 50%;
-}
-
-input[type=range]::-ms-thumb {
-  background-color: #29434e;
-  width: 20px;
-  height: 20px;
-  border: 3px solid #29434e;
-  border-radius: 50%;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-  height: 6px;
-  background:linear-gradient(to right, #546e7a calc(var(--value)*1%), #fff 0);
-}
-input[type=range]::-moz-range-track {
-  height: 6px;
-  background:linear-gradient(to right, #546e7a calc(var(--value)*1%), #fff 0);
-}
-
-input[type=range]::-ms-track {
-  background-color: #29434e;
-  height: 3px;
-} 
-
-input[type=range]::-ms-fill-lower {
-  background-color: HotPink
-}
-
-input[type=range]::-ms-fill-upper {
-  background-color: black;
-} 
 
 #inputtext{
   border-radius: 4pt;
@@ -106,6 +45,7 @@ input[type=range]::-ms-fill-upper {
     align-items: center;
     align-content: center;
     justify-content: center;
+    flex-direction: column;
     }
 
    
@@ -114,7 +54,7 @@ input[type=range]::-ms-fill-upper {
 #Background{
     background-color: #546e7a;
     display: flex;
-    flex-direction: column;
+    
     flex-wrap: nowrap;
     justify-content: center;
     align-content: stretch;
@@ -147,13 +87,111 @@ h2{
 }
 #preview{
   background-color: #fff;
+
 }
 #menu{
    
-    
-    
+    display: flex;
+    flex-direction: row;
     inline-size: auto;
     list-style-type: disc;
   
+
+}
+
+/* GAME*/
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+#bodytablero {
+
+
+  background-color: #546e7a;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  }
+
+
+
+td {
+  border: rgba(0, 0, 0, 0.2) solid 2px;
+}
+
+.contenedor-botones {
+  display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    }
+
+ 
+
+
+.btn {
+
+  
+  cursor: pointer;
+  background-color: #819ca9;
+  width: 40px;
+  height: 40px;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+
+  
+  
+}
+
+.btn:hover {
+  background: black;
+  color: white;
+}
+
+#contenedor-tablero{
+  display: flex;
+  background-color: #546e7a;
+  align-content: center;
+  flex-direction: column;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: fixed;
+  
+
 
 }

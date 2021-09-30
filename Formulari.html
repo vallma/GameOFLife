@@ -24,16 +24,21 @@
     <div id="background">
     <div id="ContainerFormulari">
         
-    <form type="text" method="POST" action="./index.html">
+   
         <h2>INSEREIX EL TEU NICK</h2>
         <p>
             <input id="inputtext" type="text" name="username" id="username" placeholder="Username">
         </p>
-    <p><input type="range" min="30" max="170" step="1" value="90" id="filas"><label>90</label></p>
-    <p>  <input type="range" min="-50" max="50" step="1" value="10" id="columnas"><label>10</label></p>
+        <p>
+            <input id="filas" type="number"  >
+        </p>
+        <p>
+            <input id="columnas" type="number" >
+        </p>
+    
         <button value="Login" onclick="saveButtonHandler()" >Login</button>
         
-</form>
+
     <script>
        for( input of document.querySelectorAll("input[type=range]")){
    actualizarInput(input) 
@@ -53,18 +58,6 @@ function actualizarInput(input){
    input.style.setProperty("--value", (input.value - inputMin)/unidad);  
 }
 
-
-
-var saveButton = document.getElementById("Login");
-    saveButton.onclick = saveButtonHandler;
-
-function saveButtonHandler() {
-    var finput = document.getElementById("filas");
-    var Lfilas = finput.value;
-    var cinput = document.getElementById("columnes");
-    var Lcolumnes = cinput.value;
-   
-}
 
 
     </script>

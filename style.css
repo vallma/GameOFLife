@@ -1,24 +1,53 @@
 HTML CSS JSResult Skip Results Iframe
 EDIT ON
 /* Formulari*/
-body{ background-color:#333; color:#777; 
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing:border-box ;
+}
+
+body{ background-color:#333; color:#777; font-family: 'Roboto';
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: center;
     align-content: stretch;
     align-items: center;}
+
+
+    img{
+      padding-left: 25;
+      height: 75;
+      width: 250;
+    }
+
+header{
+  background-color: #fff;
+}    
 #cabezera{
-
-
+        display: flex;
+        width: 900;
+        margin: 0 auto;
         padding-top: 2pt;
         background-color: #29434e;
-        height: 75px;
+        height: 110px;
         flex-direction: row;
+        flex-grow: 100;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: stretch;
+        align-items: center;
        
        
         
     }
-label{display:inline-block; width:3em;}
+
+
+    ul{
+      display: flex;
+      flex-direction: row;
+    }
+
 
 
 #inputtext{
@@ -100,6 +129,12 @@ h2{
 }
 
 /* GAME*/
+
+
+
+header{
+  height: 300;
+}
 
 
 html {

@@ -1,0 +1,212 @@
+HTML CSS JSResult Skip Results Iframe
+EDIT ON
+/* Formulari*/
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing:border-box ;
+}
+
+body{ background-color:#333; color:#777; font-family: 'Roboto';
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;}
+
+
+    img{
+      padding-left: 25;
+      height: 75;
+      width: 250;
+    }
+
+header{
+  background-color: #fff;
+}    
+#cabezera{
+        display: flex;
+        width: 900;
+        margin: 0 auto;
+        padding-top: 2pt;
+        background-color: #29434e;
+        height: 110px;
+        flex-direction: row;
+        flex-grow: 100;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: stretch;
+        align-items: center;
+       
+       
+        
+    }
+
+
+    ul{
+      display: flex;
+      flex-direction: row;
+    }
+
+
+
+#inputtext{
+  border-radius: 4pt;
+  text-align: center;
+  color: #546e7a;
+  border-color: #546e7a;
+  box-shadow: 4px;
+}
+#Login{
+  height: 20px;
+  width: 60px;
+  box-sizing: content-box ;
+
+}
+
+#Containerformulari{
+    height: 400;
+    width: 400;
+    background-color: #819ca9;
+    display: flex;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.16), 0 0 0 2px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    }
+
+   
+  
+
+#Background{
+    background-color: #546e7a;
+    display: flex;
+    
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: center;
+    height:100%;
+}
+h1{
+  text-align: center;
+  align-content: flex-start;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+  ;
+  text-shadow: 2px 2px  black ;
+  
+  color: #fff;;
+  
+
+}
+h2{
+    
+    text-align: center;
+    align-content: flex-start;
+    justify-content: center;
+    text-shadow: 2px 2px  #29434e ;
+    border: 1px;
+    
+    color:#fff;
+    
+
+}
+#preview{
+  background-color: #fff;
+
+}
+#menu{
+   
+    display: flex;
+    flex-direction: row;
+    inline-size: auto;
+    list-style-type: disc;
+  
+
+}
+
+/* GAME*/
+
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+#container {
+  background-color: #819ca9;
+  display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+   
+  
+  }
+
+
+
+td {
+  border: rgba(0, 0, 0, 0.2) solid 2px;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #819ca9;
+  width: 40px;
+  height: 40px;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+}
+
+.btn:hover {
+  background: black;
+  color: white;
+}
+
+#contenedor-tablero:nth-child(1) {
+  -webkit-order: 0;
+  -ms-flex-order: 0;
+  order: 0;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  
+
+  margin: 5% auto; 
+  
+  }
+
+  
+  
+  
+  
+
+
+
+.contenedor-botones:nth-child(2) {
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  }

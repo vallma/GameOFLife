@@ -5,16 +5,17 @@
     <link href="style.css"
       rel="stylesheet" type="text/css">
     <link href="index.html">
+   
     <title>JOC DE LA VIDA</title>
 </head>
 <body>
 
-    <header>
-    <div id="cabezera">
-        <img src="Logo.png" alt="" >
+  <header>
+    <div class="menu">
         
+        <a href="Formulari.html"> <img src="Logo.png" alt="" ></a>
         <nav>
-            <h1>JOC DE LA VIDA</h1>
+           
             <ul>
               <li><a href="./index.html">GAME</a></li>
               <li><a href="#">Estadístiques</a></li>
@@ -22,54 +23,31 @@
             </ul>
         </nav>
     </div>
-</header>
+</header>    
     <div id="background">
-    <div id="ContainerFormulari">
+    <form id="ContainerFormulari"  action="index.php" method="POST">
         
-   
         <h2>INSEREIX EL TEU NICK</h2>
-        <p>
+        
             <input id="inputtext" type="text" name="username" id="username" placeholder="Username">
-        </p>
-        <p>
-            <input id="filas" type="number"  >
-        </p>
-        <p>
-            <input id="columnas" type="number" >
-        </p>
+        
+        <h4>FILAS</h4>
+            <input id="filas" name="filas" type="number" placeholder="0" value="" >
+        
+        <h4>COLUMNAS</h4>
+            <input id="columnas" name="columnas" type="number" placeholder="0" value="" ><br>
+    </br>
+        
     
-        <button a href value="Login"  onclick="window('index.html')" >Login</button>
+        <input type="submit" value="Login"   ></input>
+
+    </form>
         
 
-    <script>
-       for( input of document.querySelectorAll("input[type=range]")){
-   actualizarInput(input) 
-}
-
-document.addEventListener("input", function(evt) {
-   var input = evt.target;
-   actualizarInput(input)
-});
-
-function actualizarInput(input){
-   var label = input.parentElement.querySelector("label");
-   label.innerHTML = input.value;
-   var inputMin = input.getAttribute("min");
-   var inputMax = input.getAttribute("max");
-   var unidad = (inputMax - inputMin) / 100;
-   input.style.setProperty("--value", (input.value - inputMin)/unidad);  
-}
-
-
-
-    </script>
-    <div id="preview">
-
-    </div>
-    </div>
-    
-</div>
-    
+  
+<script>
+   
+</script>
     
 </body>
 </html>

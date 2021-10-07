@@ -1,17 +1,84 @@
 
 
+function world(){
+    
+    generarTablero();
+    canviVelocitat();
+    randomizar();
+    limpiar();
+    
+
+};
+
+var route = window.location.href;
+
+var nameSeed = route.split('?');
+nameSeed = nameSeed[1];
+let valor = getCookie(nameSeed);
+valor = JSON.parse(valor);
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+  }
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent (document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+  
 
 
 
- /*let columnes = "<?php echo $columnes ?>";
- let files = "<?php echo $files ?>";
+//agafar les variables de la Cookie
 
-        let lado = 20;
 
-        let reproducir = false;
+const columnas = valor["columnas"];
+const filas = valor["filas"];
 
-        let fotografia = [];
-*/
+
+let lado = 20;
+
+ let reproducir = false;
+
+ let fotografia = [];
+
+
+;
+
+
+
+function generarTablero() {
+let html = "<table cellpadding=0 cellspacing=0 id='tablero'>"
+for (let y = 0; y < filas; y++) {
+    html += "<tr>"
+    for (let x = 0; x < columnas; x++) {
+        html += `<td id="celula-${x + "-" + y}" onmouseup="cambiarEstado(${x}, ${y});mapa_complejidad = []">`
+        html += "</td>"
+    }
+    html += "</tr>"
+}
+html += "</table>"
+let contenedor = document.getElementById("contenedor-tablero")
+contenedor.innerHTML = html
+let tablero = document.getElementById("tablero")
+tablero.style.width = lado * columnas + "px"
+tablero.style.height = lado * filas + "px"
+
+}
+
 
      //control del teclat i esdevaniments
         document.addEventListener("keydown", (e) => { //Esdavanimet per controlar el teclat
@@ -176,7 +243,9 @@
         }
 
         function contarVivas(x, y) {
-            let vivas = 0
+            let vivas = 0;
+            let cvivas= document.getElementById("stats")
+            cvivas.innerHTML=this.value;
             for (let i = -1; i <= 1; i++) {
                 for (let j = -1; j <= 1; j++) {
                     if (i == 0 && j == 0) {
@@ -185,6 +254,7 @@
                     try {
                         if (fotografia[x + i][y + j]) {
                             vivas++
+                            cvivas++
                         }
                     } catch (e) { }
                     if (vivas > 3) {
@@ -219,3 +289,15 @@
                 }
             }
         }
+        function listCookies() {
+            var theCookies = document.cookie.split(';');
+            var aString = '';
+            for (var i = 1 ; i <= theCookies.length; i++) {
+                aString += i + ' ' + theCookies[i-1] + "\n";
+            }
+            return aString;
+        }
+        
+        window.onload = () => {
+            world();
+          }

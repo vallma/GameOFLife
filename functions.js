@@ -134,7 +134,7 @@ tablero.style.height = lado * filas + "px"
                       
                     }
         }
-
+//Cambia el color del fons per diferenciar quan esta en play o esta en Pause
         function intercambiarReproducción() {
             mapa_complejidad = []
             reproducir = !reproducir
@@ -159,6 +159,7 @@ tablero.style.height = lado * filas + "px"
                 celula.style.background = ""
             }
         }
+        //Funcio per randomitzar amb el math.random les celules 
         function randomizar() {
             mapa_complejidad = []
             for (let x = 0; x < columnas; x++) {
@@ -169,7 +170,7 @@ tablero.style.height = lado * filas + "px"
                 }
             }
         }
-
+// posa les caselles buides 
         function limpiar() {
             mapa_complejidad = []
             for (let x = 0; x < columnas; x++) {
@@ -244,8 +245,6 @@ tablero.style.height = lado * filas + "px"
 
         function contarVivas(x, y) {
             let vivas = 0;
-            let cvivas= document.getElementById("stats")
-            cvivas.innerHTML=this.value;
             for (let i = -1; i <= 1; i++) {
                 for (let j = -1; j <= 1; j++) {
                     if (i == 0 && j == 0) {
@@ -297,7 +296,7 @@ tablero.style.height = lado * filas + "px"
             }
             return aString;
         }
-        
+        // carrega les funcions 
         window.onload = () => {
             world();
           }

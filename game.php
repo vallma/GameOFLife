@@ -33,7 +33,7 @@
 
     <div id="contenedor-tablero"> 
       
-    <div id="stats" >  STATS </div>
+ <div id="stats" >  STATS </div>
     </div>
    
 
